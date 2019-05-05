@@ -71,12 +71,12 @@ namespace LinkedIn.Api2
         }
         
 
-        public void FinalizeCallback(NameValueCollection parameters)
+        public bool FinalizeCallback(NameValueCollection parameters)
         {
             if (parameters["state"] == null)
                 throw new Exception("Invalid state value read from parameters!");
 
-            Api.Callback(
+            return Api.Callback(
                 parameters["state"],
                 parameters["code"],
                 parameters["error"],

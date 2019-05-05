@@ -59,17 +59,23 @@ namespace LinkedIn.Api2
         }
 
 
-        public void Callback(
+        public bool Callback(
             string state, string code, 
             string error, string error_description,
             Action success,
             Action<string, string> failure)
         {
             if (state != StateId)
+            {
                 failure("Error", "Invalid state!");
+                return false;
+            }
 
             if (!string.IsNullOrWhiteSpace(error))
+            {
                 failure(error, error_description);
+                return false;
+            }
 
             AuthorizationCode = code;
 
@@ -90,10 +96,14 @@ namespace LinkedIn.Api2
                 .Select(m => m.Groups[1].Value)
                 .FirstOrDefault();
 
-            if (AccessToken != null)
-                success();
-            else
+            if (AccessToken == null)
+            {
                 failure("TokenError", "Token retrieval failure!");
+                return false;
+            }
+
+            success();
+            return true;
         }
 
 
