@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>Codechu</Company>
+    <Product>LinkedIn.Api2</Product>
+    <Authors>obarlik</Authors>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/obarlik/LinkedIn.Api2/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/obarlik/LinkedIn.Api2</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/obarlik/LinkedIn.Api2</RepositoryUrl>
+    <AssemblyVersion>1.0.2.2</AssemblyVersion>
+    <Version>1.0.2</Version>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <FileVersion>1.0.2.2</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
