@@ -15,7 +15,7 @@ protected void LinkButton1_Click(object sender, EventArgs e)
         "http://localhost:6625/auth/linkedin/default.aspx", // OAUTH Callback Url
         success: (ln) =>
         {
-            FormsAuthentication.RedirectFromLoginPage(ln.PersonName, true);
+            FormsAuthentication.RedirectFromLoginPage(ln.PersonEmail, true);
         });
 
     Session["LinkedInAuth"] = linkedInApi;
